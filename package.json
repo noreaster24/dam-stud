@@ -1,7 +1,7 @@
 {
   "name": "dam-stud",
   "version": "1.0.0",
-  "description": "",
+  "description": "npm install mysql \r npm i sequelize\r npm install dotenv\r npm init --yes\r npm install --saved-dev jest\r npm install express\r npm i connect-session-sequelize  https://www.npmjs.com/package/connect-session-sequelize \r npm i express-handlebars\r npm i handlebars   https://www.tabnine.com/code/javascript/modules/express-handlebars (helped with setting everything up)\r npm i express-session\r npm install bcrypt\r npm install --save mysql2",
   "main": "server.js",
   "dependencies": {
     "bcrypt": "^5.0.1",
