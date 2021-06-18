@@ -1,0 +1,37 @@
+{
+  "name": "dam-stud",
+  "version": "1.0.0",
+  "description": "npm install mysql \r npm i sequelize\r npm install dotenv\r npm init --yes\r npm install --saved-dev jest\r npm install express\r npm i connect-session-sequelize  https://www.npmjs.com/package/connect-session-sequelize \r npm i express-handlebars\r npm i handlebars   https://www.tabnine.com/code/javascript/modules/express-handlebars (helped with setting everything up)\r npm i express-session\r npm install bcrypt\r npm install --save mysql2",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
+    "express-session": "^1.17.2",
+    "handlebars": "^4.7.7",
+    "handlebars-helpers": "^0.10.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+  },
+  "devDependencies": {
+    "jest": "^27.0.4"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noreaster24/dam-stud.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noreaster24/dam-stud/issues"
+  },
+  "homepage": "https://github.com/noreaster24/dam-stud#readme",
+  "keywords": []
+}
