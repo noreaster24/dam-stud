@@ -6,6 +6,7 @@
                 {{!-- Sample image for now, need to figure out how to show breed image --}}
                 <img src="assets/images/profileSample.png" alt="dog image">
             </div>
+            {{!-- pet profile information based on the user from the database --}}
             <div class="info">
                 <h1 class="title">{{user.petname}}</h1>
                 <p>Sex: {{user.sex}}</p>
@@ -13,6 +14,7 @@
                 <p>Age: {{user.age}}</p>
                 <p>Breed: {{user.breed}}</p>
                 <p>Bio: {{user.bio}}</h3>
+                {{!-- Shows user posts --}}
                 <article class="post">
                     <div class="title">
                         <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
@@ -26,6 +28,7 @@
                     </div>
                 </article>
 
+                {{!-- User comment form, only works if logged in --}}
                 {{#if loggedIn}}
                 <form class="comment-form">
                     <div>
@@ -37,7 +40,7 @@
                     </div>
                 </form>
                 {{/if}}
-
+                {{!-- pet-profile comment section --}}
                 <div class="comments">
                     {{#each post.comments}}
                     <section class="comment">
@@ -55,6 +58,7 @@
     </div>
 </div>
 
+{{!-- comment.js will only work if loggedIn --}}
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
 {{/if}}
