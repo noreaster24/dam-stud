@@ -6,25 +6,25 @@ const router = require('express').Router();
 
 // GET /api/users
 
-// router.get('/', (req, res) => {
-//     // Access our User model and run .findAll() method
-//     User.findAll({
-
-//     })
+router.get('/', (req, res) => {
+    // Access our User model and run .findAll() method
+    User.findAll({
+        attributes: { exclude: ['password'] }
+    })
         .then(dbUserData => { // Accesses the session information from the user authentication
-    req.session.save(() => {
-        req.session.user_id = dbUserData.id;
-        req.session.username = dbUserData.username;
-        req.session.loggedIn = true;
+            req.session.save(() => {
+                req.session.user_id = dbUserData.id;
+                req.session.username = dbUserData.username;
+                req.session.loggedIn = true;
 
-        res.json(dbUserData);
-    });
-})
-//       .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//       });
-//   });
+                res.json(dbUserData)
+                    .catch(err => {
+                        console.log(err);
+                        res.status(500).json(err);
+                    });
+            });
+        });
+});
 
 
 
@@ -81,5 +81,6 @@ router.post('/logout', (req, res) => {
         res.status(404).end();
     }
 });
+
 
 module.exports = router;
