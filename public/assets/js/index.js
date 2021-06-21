@@ -1,5 +1,4 @@
 
-
 // movement animation to happen
 const card = document.querySelector("#card");
 const container = document.querySelector("#profile-container");
