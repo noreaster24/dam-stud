@@ -1,0 +1,25 @@
+<ol class="profile-list">
+    {{!-- Loops through all user profiles in the database and creates their profile section --}}
+    {{#each profiles |profile|}}
+    <li>
+        <article class="profile">
+            <div class="title">
+                <a href="{{petname}}" target="_blank">{{petname}}</a>
+                {{!-- Need to determine how to handle pet profile images --}}
+                <span>({{post_url}})</span> 
+            </div>
+            <div class="profile-info">
+                {{!-- Shows all pet characteristics from the database --}}
+                <ol class="pet-info">
+                    <li>Breed: {{breed}}</li>
+                    <li>Sex: {{sex}}</li>
+                    <li>Age: {{age}}</li>
+                    <li>Registered: {{registered}}</li>
+                </ol>
+                |
+                <p>Bio: {{pet_bio}}</p>
+            </div>
+        </article>
+    </li>
+    {{/each}}
+</ol>
