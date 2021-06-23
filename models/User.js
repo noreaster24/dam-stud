@@ -19,27 +19,20 @@ User.init(
             primaryKey: true,
             autoIncrement: true
         },
-        petname: {
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                isEmail: true
+            }
+        },
+        password: {  // Need to determine how to store password on database
             type: DataTypes.STRING,
             allowNull: false
-        },
-        breed: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        sex: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            validate: {
-                isIn: [["male", "female"]]
-            }
-        },
-        age: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            validate: {
-                isNumeric: true
-            }
         }
     },
     {
