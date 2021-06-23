@@ -1,0 +1,64 @@
+<div id="profile-container" class="container">
+    <div id="card" class="row justify-content-start">
+        <div id="profile-card" class="col-4">
+            <div class="profile-pic">
+                <div class="circle"></div>
+                {{!-- Sample image for now, need to figure out how to show breed image --}}
+                <img src="assets/images/profileSample.png" alt="dog image">
+            </div>
+            {{!-- pet profile information based on the user from the database --}}
+            <div class="info">
+                <h1 class="title">{{user.petname}}</h1>
+                <p>Sex: {{user.sex}}</p>
+                <p>Registered: {{user.registered}}</p>
+                <p>Age: {{user.age}}</p>
+                <p>Breed: {{user.breed}}</p>
+                <p>Bio: {{user.bio}}</h3>
+                {{!-- Shows user posts --}}
+                <article class="post">
+                    <div class="title">
+                        <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
+                        <span>({{post.post_url}})</span>
+                    </div>
+                    <div class="meta">
+                        {{post.vote_count}} point(s) by {{post.user.username}} on
+                        {{post.created_at}}
+                        |
+                        <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
+                    </div>
+                </article>
+
+                {{!-- User comment form, only works if logged in --}}
+                {{#if loggedIn}}
+                <form class="comment-form">
+                    <div>
+                        <textarea name="comment-body"></textarea>
+                    </div>
+
+                    <div>
+                        <button type="submit">add comment</button>
+                    </div>
+                </form>
+                {{/if}}
+                {{!-- pet-profile comment section --}}
+                <div class="comments">
+                    {{#each post.comments}}
+                    <section class="comment">
+                        <div class="meta">
+                            {{user.petname}} on {{created_at}}
+                        </div>
+                        <div class="text">
+                            {{comment_text}}
+                        </div>
+                    </section>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- comment.js will only work if loggedIn --}}
+{{#if loggedIn}}
+<script src="/js/comment.js"></script>
+{{/if}}
