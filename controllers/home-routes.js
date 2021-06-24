@@ -1,14 +1,12 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Comment, Profile } = require('../models'); // Should this be Profile instead of Post???
+const { Post, User, Comment, Profile } = require('../models'); 
 
 // Opens main page and shows all profiles in the database
 router.get('/', (req, res) => {
     console.log(req.session);
 
-    Profile.findAll({
-        // Need to create Post routes here to pull every pet profile
-    })
+    Profile.findAll({ })
         .then(dbProfileData => {
             const profiles = dbProfileData.map(profile => profile.get({ plain: true }));
             // pass a single post object into the homepage template

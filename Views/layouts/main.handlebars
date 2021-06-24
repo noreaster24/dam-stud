@@ -1,5 +1,4 @@
 {{!-- This is the template for the main page --}}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,8 +17,11 @@
             </h1>
             
             <nav>
+                {{#if loggedIn}}
                 <button id="logout" class="btn-no-style">logout</button>
+                {{else}}
                 <a href="/login">login</a>
+                {{/if}}
             </nav>
         </header>
         <main>
