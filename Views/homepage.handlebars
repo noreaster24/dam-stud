@@ -1,7 +1,7 @@
 <ol class="profile-list">
     {{!-- Loops through all user profiles in the database and creates their profile section --}}
     {{#each profiles as |profile|}}
-    <li>
+    <li class="profile-container">
         <article class="profile">
             <div class="title">
                 <a href="pet/{{id}}" target="_blank">{{petname}}</a>
@@ -15,7 +15,6 @@
                     <li>Sex: {{sex}}</li>
                     <li>Age: {{age}}</li>
                 </ol>
-                |
                 <p>Bio: {{pet_bio}}</p>
             </div>
         </article>
