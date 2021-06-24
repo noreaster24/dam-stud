@@ -1,15 +1,58 @@
 # WhatsUpDogs
 
-## Installation:
-npm install mysql 
-npm i sequelize
-npm install dotenv
-npm init --yes
-npm install --saved-dev jest
-npm install express
-npm i connect-session-sequelize  https://www.npmjs.com/package/connect-session-sequelize 
-npm i express-handlebars
-npm i handlebars   https://www.tabnine.com/code/javascript/modules/express-handlebars (helped with setting everything up)
-npm i express-session
-npm install bcrypt
-npm install --save mysql2
+
+## Description
+
+*This apllication is built to help better connect with other Dog Breeders through an easy to use web layout. We have used MySQL2, Express, Sequelize, Bootstrap, Handlerbars and dotenv*
+---------instert picture here-------
+
+## Deployed-Link: 
+adfgdfg
+
+
+## Developers-Profile:
+* GitHub: [noreaster24](https://github.com/noreaster24)
+* GitHub: [Shilohjones194](https://github.com/Shilohjones194)
+* GitHub: [IBnIT](https://github.com/IBnIT)
+
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [license](#license)
+* [Contributors](#contributors)
+* [Tests](#tests)
+* [Questions](#questions)
+
+
+## Installation
+
+We have installed the following applications for NPM: 
+- MySQL, MySQL2, Express, Exoress-session, Sequelize, connect-session-sequelize, dotenv, Handlebars, bcrypt.
+
+* Create an .env file to the root of the project:
+
+```text
+- DB_NAME='whats_up_dog_db'
+- DB_USER='XXX'
+- DB_PW='XXX'
+```
+
+## Usage
+
+
+## License
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+
+## Contributors
+
+
+## Tests
+
+
+## Questions
+
+* Please contact the following if you have any questions or concerns:
+* Joe Porrazzo :[josephporrazzo@gmail.com](mailto:josephporrazzo@gmail.com).
+* Luke Jones :[Shilohjonezz@gmail.com](mailto:Shilohjonezz@gmail.com).
+* Kyle Berta: [kyle.berta7@gmail.com](mailto:kyle.berta7@gmail.com).
+
