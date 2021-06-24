@@ -71,5 +71,42 @@ router.get('/post/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
+router.get('/pet/:id', (req, res) => {
+    Profile.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: [
+            'id',
+            'petname',
+            'sex',
+            'breed',
+            'age',
+            'pet_bio',
+        ]
+        // include: [User]
+        // include: [comments]
+        //-GET comments
+    }).then(data => {
+        if (data) {
+            const petData = data.get({
+                plain: true
+            })
+            console.log(petData)
+            res.render('pet-profile', petData)
+        }
+        // res.json(data)
+    })
+});
+// // {
+//   "id": 1,
+//   "petname": "Rusty",
+//   "breed": "Doberman",
+//   "sex": "male",
+//   "age": 7,
+//   "pet_bio": "Rusty is a friendly guy that loves to play fetch",
+//   "createdAt": "2021-06-24T02:19:18.000Z",
+//   "updatedAt": "2021-06-24T02:19:18.000Z"
+// }
 
 module.exports = router;
