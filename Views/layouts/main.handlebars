@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dam-Stud</title>
+    <title>What's Up Dog</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
@@ -14,23 +14,18 @@
     <div class="wrapper">
         <header>
             <h1>
-                <a href="/">Dam Stud</a>
+                <a href="/">What's Up Dog?!</a>
             </h1>
-            {{!-- <nav>
-                <a href="/login">login</a>
-            </nav> --}}
             <nav>
+                {{#if loggedIn}}
+                <a href="/dashboard">dashboard</a>
                 <button id="logout" class="btn-no-style">logout</button>
+                {{else}}
                 <a href="/login">login</a>
+                {{/if}}
             </nav>
         </header>
         <main>
-            {{!-- Takes user to create their new profile
-            <div class="generate-profile">
-                <button type="button" class="btn btn-primary">New Profile</button>
-                <h4 class="text-light bg-dark p-3">Create a profile introducing yourself to the group!</h4>
-            </div> --}}
-            {{!-- Loads all user information from homepage.handlebars --}}
             {{{ body }}}
         </main>
         <footer>
@@ -38,7 +33,9 @@
         </footer>
     </div>
 
-    <script src="/js/logout.js"></script>
+    {{#if loggedIn}}
+    <script src="js/logout.js"></script>
+    {{/if}}
 </body>
 
 </html>
