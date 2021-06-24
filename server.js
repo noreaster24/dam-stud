@@ -31,11 +31,11 @@ app.set('view engine', 'handlebars');
 
 // app.use(session(sess));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
-
+app.use(require('./controllers/'));
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Whats up dog, im listening'));

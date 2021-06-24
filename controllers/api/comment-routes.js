@@ -3,6 +3,7 @@ const router = require('express').Router();
 //this is just for the comment section for below each post. 
 ///   Still NOT 100% done or know if its right!
 
+// l
 router.get('/', (req, res) => {
     Comment.findAll()
         .then(dbCommentData => res.json(dbCommentData))
@@ -15,18 +16,20 @@ router.get('/', (req, res) => {
 
 
 //////////// to Post a comment //////////////
-
-//router.post('/', (req, res) => {
-//     Comment.create({
-//         comment_text: req.body.comment_text,
-//         post_id: req.session.user_id,
-//     })
-//     .then(=> res.json())
-//     .catch(err => {
-//         console.log(err);
-//         res.status(400).json(err);
-//     });
-// });
+// - Need user to add comment pet/comment/pet
+router.post('/pet/comment/:id', (req, res) => {
+    //in order to access id, you need to req.params.id
+    // id = specfic pet your commenting on
+    Comment.create({
+        comment_text: req.body.comment_text,
+        post_id: req.session.user_id,
+    })
+    .then(=> res.json())
+    .catch(err => {
+        console.log(err);
+        res.status(400).json(err);
+    });
+});
 
 
 
