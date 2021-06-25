@@ -16,6 +16,22 @@ const profileData = [
         sex: "male",
         age: 4,
         pet_bio: "This dude is lazy"
+    },
+    {
+        // user_id: 3,
+        petname: 'North',
+        breed: "German Shepard",
+        sex: "Female",
+        age: 1,
+        pet_bio: "She is a borderline terrorist"
+    },
+    {
+        // user_id: 4,
+        petname: 'Dakota',
+        breed: "GermanShepard/Boxer mix",
+        sex: "Female",
+        age: 7,
+        pet_bio: "She is the best dog anyone could."
     }
 ]
 const seedProfiles = () => Profile.bulkCreate(profileData);

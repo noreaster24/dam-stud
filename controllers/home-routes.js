@@ -98,6 +98,7 @@ router.get('/pet/:id', (req, res) => {
         // res.json(data)
     })
 });
+
 // // {
 //   "id": 1,
 //   "petname": "Rusty",

@@ -2,6 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // Create our User Model
+// this is for the dog part of the profile.
 class Profile extends Model { };
 
 Profile.init (

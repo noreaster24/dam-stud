@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { User, Post } = require('../models');
 
 const userData = [
     {
@@ -10,6 +10,16 @@ const userData = [
         username: "Joe_Porrazzo",
         email: "joepa2624@yahoo.com",
         password: "TrustEvery1"
+    },
+    {
+        username: "KyleBerta",
+        email: "KB@yahoo.com",
+        password: "NeverTrustA$$"
+    },
+    {
+        username: "Will",
+        email: "Willbethere@yahoo.com",
+        password: "TrustingTheSystem69"
     }
 ]
 const seedUsers = () => User.bulkCreate(userData);
