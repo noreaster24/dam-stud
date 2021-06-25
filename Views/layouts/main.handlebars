@@ -7,8 +7,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What's Up Dog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400;1,600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    link the bootstrap
+
 </head>
 
 <body>
@@ -17,6 +21,10 @@
             <h1>
                 <a href="/">What's Up Dog?!</a>
             </h1>
+            <h4>
+                No spamming, no scamming social platform for fellow dog enthusiasts to safely and securely discuss and
+                plan meetups!
+            </h4>
             <nav>
                 {{#if loggedIn}}
                 <a href="/login">dashboard</a>
@@ -25,8 +33,12 @@
                 <a href="/login">login</a>
                 {{/if}}
             </nav>
+
         </header>
         <main>
+            <div class="hero">
+                <img src="../../public/images/park.jpeg" alt="" />
+            </div>
             {{{ body }}}
         </main>
         <footer>
