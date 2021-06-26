@@ -4,9 +4,7 @@
     <li class="profile-container">
         <article class="profile">
             <div class="title">
-                <a href="pet/{{id}}" target="_blank">{{petname}}</a>
-                {{!-- Need to determine how to handle pet profile images --}}
-                <span>{{post_url}}</span> 
+                <h2>{{petname}}</h2>
             </div>
             <div class="profile-info">
                 {{!-- Shows all pet characteristics from the database --}}
@@ -16,6 +14,7 @@
                     <li>Age: {{age}}</li>
                 </ol>
                 <p>Bio: {{pet_bio}}</p>
+                <a href="pet/{{id}}" target="_blank">View Profile</a>
             </div>
         </article>
     </li>
