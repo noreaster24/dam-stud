@@ -17,21 +17,41 @@ a:hover {
 }
 
 nav a {
-    padding-left: 40px;
+    padding: 0 40px 0 40px;
+    font-size: 28px;
     border:rgba(8, 83, 156, 0.75);
 }
 
-header h1 {
-    text-align: left;
-    padding: 20px 0 30px 0;
-    align-content: center;
+header {
+    padding: 20px 35px;
     background-color:rgba(8, 83, 156, 0.75);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-image: url("../images/dogs-background.jpeg");
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+header h1 {
+    font-size: 50px;
+    text-align: center;
+    /* padding: 40px 0 30px 0; */
+    align-content: center;
+    justify-content: center;
 }
 
 header h4 {
-    font-size: 16px;
-    font-weight:lighter;
-    margin: 10px 40px 10px 40px;
+    font-size: 20px;
+    font-weight: lighter;
+    color: black;
+    align-content: center;
+    margin: 40px 40px 10px 10px;
     
 }
 
@@ -56,6 +76,19 @@ article {
     align-content: center;
     justify-content: center;
     padding: 20px;
+}
+
+.profile-list {
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.profile-container {
+    border: 1px solid #3486eb;
+    border-radius: 20px;
+    padding: 5px;
+    max-width: 50%;
+    margin: 15px;
 }
 
 .profile-info title {
