@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400;1,600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-
+    {{!-- <script src="/js/comment.js"></script> --}}
 </head>
 
 <body>
@@ -26,18 +26,18 @@
                 plan meetups!
             </h4>
             <nav>
-                {{#if loggedIn}}
+                {{!-- {{#if loggedIn}} --}}
                 <a href="/login">dashboard</a>
                 <button id="logout" class="btn-no-style">logout</button>
-                {{else}}
+                {{!-- {{else}} --}}
                 <a href="/login">login</a>
-                {{/if}}
+                {{!-- {{/if}} --}}
             </nav>
 
         </header>
         <main>
             <div class="hero">
-                <img src="../../public/images/park.jpeg" alt="" />
+                <img width = 200 height= 200 src="/images/park.jpeg" alt="" />
             </div>
             {{{ body }}}
         </main>
@@ -46,9 +46,13 @@
         </footer>
     </div>
 
-    {{#if loggedIn}}
-    <script src="js/logout.js"></script>
-    {{/if}}
+    {{!-- {{#if loggedIn}} --}}
+    
+    <script src="/js/comment.js"></script>
+    <script src="/js/createAccount.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/logout.js"></script>
+    {{!-- {{/if}} --}}
 </body>
 
-</html>
+</html>.

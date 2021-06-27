@@ -4,7 +4,7 @@
             <div class="profile-pic">
                 <div class="circle"></div>
                 {{!-- Sample image for now, need to figure out how to show breed image --}}
-                <img src="../public/images/german-shepherd.png" alt="dog image">
+                <img height =200 width = 200 src="/images/german-shepherd.png" alt="dog image">
             </div>
             {{!-- pet profile information based on the user from the database --}}
             <div class="info">
@@ -23,22 +23,23 @@
                         {{post.vote_count}} point(s) by {{post.user.username}} on
                         {{post.created_at}}
                         |
-                        <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
+                        <button class ="addComment">{{post.comments.length}} comment(s)</a>
                     </div>
                 </article>
 
                 {{!-- User comment form, only works if logged in --}}
-                {{#if loggedIn}}
+                {{!-- {{#if loggedIn}} --}}
+
                 <form class="comment-form">
                     <div>
                         <textarea name="comment-body"></textarea>
                     </div>
 
                     <div>
-                        <button type="submit">add comment</button>
+                        <button data-postID = {{post.post_id}} type="submit">add comment</button>
                     </div>
                 </form>
-                {{/if}}
+                {{!-- {{/if}} --}}
                 {{!-- pet-profile comment section --}}
                 <div class="comments">
                     {{#each post.comments}}
@@ -58,6 +59,6 @@
 </div>
 
 {{!-- comment.js will only work if loggedIn --}}
-{{#if loggedIn}}
-<script src="/public/assets/js/comment.js"></script>
-{{/if}}
+{{!-- {{#if loggedIn}} --}}
+{{!-- <script src="/public/js/comment.js"></script> --}}
+{{!-- {{/if}} --}}
