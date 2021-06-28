@@ -91,7 +91,7 @@ article {
 .wrapper button {
     cursor: pointer;
     color:royalblue;
-    border-radius: 15%;
+    border-radius: 12%;
     background-color: snow;
     font-size: 16px;
     border-radius: 10px;
@@ -99,7 +99,7 @@ article {
 
 .wrapper button:hover {
     color:rgba(8, 83, 156, 0.75);
-    border-radius: 15%;
+    border-radius: 12%;
     background-color: silver;
 }
 
@@ -116,6 +116,13 @@ article {
 
 }
 
+.login-form input {
+    width: 50%;
+    border: 1px solid black;
+    margin-bottom: 3px;
+    margin-top: 3px;
+}
+
 .signup-form {
     border: 1px solid black;
     display: block;
@@ -126,6 +133,14 @@ article {
     border-radius: 10px;
     background-color: snow;
     width: 30%;
+}
+
+.signup-form input {
+    width: 50%;
+    border: 1px solid black;
+    margin-bottom: 3px;
+    margin-top: 3px;
+
 }
 
 
