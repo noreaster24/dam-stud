@@ -24,6 +24,11 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+///ask question for res.render//////////
+router.get('/create-petprofile', (req, res) => {
+    res.render('create-petprofile')
+});
+
 router.get('/post/:id', (req, res) => {
     Post.findOne({
         where: {
@@ -34,7 +39,6 @@ router.get('/post/:id', (req, res) => {
             'post_url',
             'title',
             'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
         ],
         include: [
             {
@@ -60,7 +64,7 @@ router.get('/post/:id', (req, res) => {
             // serialize the data
             const post = dbPostData.get({ plain: true });
 
-            // pass data to template
+            ///////////////////////// pass data to template // what id "single-post doing????" ////////////////////////////////////////////
             res.render('single-post', {
                 post,
                 loggedIn: req.session.loggedIn
@@ -93,21 +97,13 @@ router.get('/pet/:id', (req, res) => {
                 plain: true
             })
             console.log(petData)
-            res.render('pet-profile', petData)
+            res.render('pet-profile', {
+                petData,
+                loggedIn: req.session.loggedIn
+            })
         }
         // res.json(data)
     })
 });
-
-// // {
-//   "id": 1,
-//   "petname": "Rusty",
-//   "breed": "Doberman",
-//   "sex": "male",
-//   "age": 7,
-//   "pet_bio": "Rusty is a friendly guy that loves to play fetch",
-//   "createdAt": "2021-06-24T02:19:18.000Z",
-//   "updatedAt": "2021-06-24T02:19:18.000Z"
-// }
 
 module.exports = router;

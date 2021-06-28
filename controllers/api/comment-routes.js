@@ -5,7 +5,7 @@ const withAuth = require('../../utils/auth');
 //this is just for the comment section for below each post. 
 ///   Still NOT 100% done or know if its right!
 
-// l
+
 router.get('/', (req, res) => {
     Comment.findAll()
         .then(dbCommentData => res.json(dbCommentData))
@@ -16,11 +16,7 @@ router.get('/', (req, res) => {
 });
 
 
-
-//////////// to Post a comment //////////////
-// - Need user to add comment pet/comment/pet
-
-router.post('/pet/comment/:id', withAuth, (req, res) => {
+router.post('/pet/comment/:id', (req, res) => {
     if (req.session) {
         //in order to access id, you need to req.params.id
         // id = specfic pet your commenting on
@@ -37,6 +33,21 @@ router.post('/pet/comment/:id', withAuth, (req, res) => {
     }
 });
 
+router.post('/', (req, res) => {
+    // if (req.session) {
+        //in order to access id, you need to req.params.id
+        // id = specfic pet your commenting on
+        console.log("POST route",req.body)
+        Comment.create(req.body)
+            .then(dbCommentData =>{
+                console.log("POST",dbCommentData)
+                res.json(dbCommentData)})
+            .catch(err => {
+                console.log(err);
+                res.status(400).json(err);
+            });
+    // }
+});
 
 ///////// To Delete/Destroy a comment ////////////
 

@@ -12,7 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400;1,600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-
+    {{!--
+    <script src="/js/comment.js"></script> --}}
 </head>
 
 <body>
@@ -26,19 +27,13 @@
                 plan meetups!
             </h4>
             <nav>
-                {{#if loggedIn}}
-                <a href="/login">dashboard</a>
-                <button id="logout" class="btn-no-style">logout</button>
-                {{else}}
                 <a href="/login">login</a>
-                {{/if}}
+                <a href="/create-petprofile">Create Pet Profile</a>
+                <button id="logout" class="btn-no-style">logout</button>
             </nav>
 
         </header>
         <main>
-            <div class="hero">
-                <img src="../../public/images/park.jpeg" alt="" />
-            </div>
             {{{ body }}}
         </main>
         <footer>
@@ -46,9 +41,6 @@
         </footer>
     </div>
 
-    {{#if loggedIn}}
-    <script src="js/logout.js"></script>
-    {{/if}}
 </body>
 
-</html>
+</html>.

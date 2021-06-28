@@ -2,43 +2,30 @@
     <div id="card" class="row justify-content-start">
         <div id="profile-card" class="col-4">
             <div class="profile-pic">
-                <div class="circle"></div>
-                {{!-- Sample image for now, need to figure out how to show breed image --}}
-                <img src="../public/images/german-shepherd.png" alt="dog image">
             </div>
             {{!-- pet profile information based on the user from the database --}}
             <div class="info">
+                <p>
+                    logged in {{loggedIn}}
+                </p>
                 <h1 class="title">{{petname}}</h1>
                 <p>Sex: {{sex}}</p>
                 <p>Age: {{age}}</p>
                 <p>Breed: {{breed}}</p>
-                <p>Bio: {{pet_bio}}</h3>
-                {{!-- Shows user posts --}}
-                <article class="post">
-                    <div class="title">
-                        <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
-                        <span>({{post.post_url}})</span>
-                    </div>
-                    <div class="meta">
-                        {{post.vote_count}} point(s) by {{post.user.username}} on
-                        {{post.created_at}}
-                        |
-                        <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
-                    </div>
-                </article>
 
-                {{!-- User comment form, only works if logged in --}}
-                {{#if loggedIn}}
+                <p>Bio: {{bio}}</h3>
+
+                    {{!-- User comment form, only works if logged in --}}
+                {{!-- {{#if loggedIn}} --}}
                 <form class="comment-form">
                     <div>
                         <textarea name="comment-body"></textarea>
                     </div>
-
                     <div>
-                        <button type="submit">add comment</button>
+                        <button data-postID={{post.post_id}} type="submit">add comment</button>
                     </div>
                 </form>
-                {{/if}}
+                {{!-- {{/if}} --}}
                 {{!-- pet-profile comment section --}}
                 <div class="comments">
                     {{#each post.comments}}
@@ -56,8 +43,4 @@
         </div>
     </div>
 </div>
-
-{{!-- comment.js will only work if loggedIn --}}
-{{#if loggedIn}}
-<script src="/public/assets/js/comment.js"></script>
-{{/if}}
+<script src="/js/comment.js"></script>

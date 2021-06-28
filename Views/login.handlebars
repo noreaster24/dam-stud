@@ -1,4 +1,6 @@
-<div class="table" >
+
+<div class="table">
+
 
     <form class="login-form">
         <h3>
@@ -38,4 +40,14 @@
         </div>
     </form>
 </div>
+
+{{#if loggedIn}}
+
+<script src="/js/logout.js"></script>
+
+{{else}}
+
 <script src="/js/login.js"></script>
+
+{{/if}}
+
