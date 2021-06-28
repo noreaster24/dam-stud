@@ -181,7 +181,7 @@ article {
 }
 
 .profile-container {
-    border: 1px solid #3486eb;
+    border: 3px solid black;
     border-radius: 20px;
     padding: 5px;
     max-width: 50%;
@@ -210,6 +210,7 @@ article {
 }
 
 .profile-pic {
+    border: 1px solid black;
     min-height: 35vh;
     display: flex;
     align-items: center;
