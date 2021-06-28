@@ -21,10 +21,15 @@ a:hover {
     color: royalblue;
 }
 
+p {
+    color: black;
+    font-weight: 500;
+}
+
 nav a {
     padding: 0 40px 0 40px;
     font-size: 28px;
-    border:rgba(8, 83, 156, 0.75);
+    border:3px solid black;
 }
 
 header {
