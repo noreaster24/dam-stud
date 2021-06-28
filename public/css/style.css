@@ -10,6 +10,11 @@ a {
     color: #F5A962;
     font-weight: bold;
     transition: color .1s;
+    background-color: snow;
+    border: 5px solid black;
+    display: block;
+    padding: 15px;
+    border-radius: 10px;
 }
 
 a:hover {
@@ -52,6 +57,11 @@ header h4 {
     color: black;
     align-content: center;
     margin: 40px 40px 10px 10px;
+    background-color: snow;
+    border: 5px solid black;
+    display: block;
+    padding: 15px;
+    border-radius: 10px;
     
 }
 
@@ -77,6 +87,63 @@ article {
     justify-content: center;
     padding: 20px;
 }
+
+.wrapper button {
+    cursor: pointer;
+    color:royalblue;
+    border-radius: 12%;
+    background-color: snow;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.wrapper button:hover {
+    color:rgba(8, 83, 156, 0.75);
+    border-radius: 12%;
+    background-color: silver;
+}
+
+.login-form {
+    border: 1px solid black;
+    display: block;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: royalblue;
+    border-radius: 10px;
+    background-color: snow;
+    width: 30%;
+
+}
+
+.login-form input {
+    width: 50%;
+    border: 1px solid black;
+    margin-bottom: 3px;
+    margin-top: 3px;
+}
+
+.signup-form {
+    border: 1px solid black;
+    display: block;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: royalblue;
+    border-radius: 10px;
+    background-color: snow;
+    width: 30%;
+}
+
+.signup-form input {
+    width: 50%;
+    border: 1px solid black;
+    margin-bottom: 3px;
+    margin-top: 3px;
+
+}
+
+
 
 .profile-list {
     justify-content: space-between;
