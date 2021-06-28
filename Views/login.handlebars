@@ -1,35 +1,50 @@
+<div class="table">
 
+    <form class="login-form">
+        <h3>
+            Log In
+        </h3>
+        <div>
+            <label for="email-login">email:</label>
+            <input type="text" id="email-login" />
+        </div>
+        <div>
+            <label for="password-login">password:</label>
+            <input type="password" id="password-login" />
+        </div>
+        <div>
+            <button type="submit">login</button>
+        </div>
+    </form>
 
-<form class="login-form">
-    <div>
-        <label for="email-login">email:</label>
-        <input type="text" id="email-login" />
-    </div>
-    <div>
-        <label for="password-login">password:</label>
-        <input type="password" id="password-login" />
-    </div>
-    <div>
-        <button type="submit">login</button>
-    </div>
-</form>
+    <form class="signup-form">
+        <h3>
+            Sign Up Today
+        </h3>
+        <div>
+            <label for="username-signup">username:</label>
+            <input type="text" id="username-signup" />
+        </div>
+        <div>
+            <label for="email-signup">email:</label>
+            <input type="text" id="email-signup" />
+        </div>
+        <div>
+            <label for="password-signup">password:</label>
+            <input type="password" id="password-signup" />
+        </div>
+        <div>
+            <button type="submit">signup</button>
+        </div>
+    </form>
+</div>
 
-<form class="signup-form">
-    <div>
-        <label for="username-signup">username:</label>
-        <input type="text" id="username-signup" />
-    </div>
-    <div>
-        <label for="email-signup">email:</label>
-        <input type="text" id="email-signup" />
-    </div>
-    <div>
-        <label for="password-signup">password:</label>
-        <input type="password" id="password-signup" />
-    </div>
-    <div>
-        <button type="submit">signup</button>
-    </div>
-</form>
+{{#if loggedIn}}
+
+<script src="/js/logout.js"></script>
+
+{{else}}
 
 <script src="/js/login.js"></script>
+
+{{/if}}

@@ -3,8 +3,6 @@ const { User } = require('../../models');
 const router = require('express').Router();
 
 /// this is going to be where the Main user can have the abilities
-// You need to work on the Models for this to work.
-
 
 // get all users
 router.get('/', (req, res) => {
