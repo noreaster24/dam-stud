@@ -105,6 +105,11 @@ article {
     list-style: none;
 
 }
+.cpp-table {
+    display: grid;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+}
 
 .wrapper button {
     cursor: pointer;
