@@ -56,7 +56,7 @@ header h4 {
     font-weight: lighter;
     color: black;
     align-content: center;
-    margin: 40px 40px 10px 10px;
+    margin: 10px 40px 10px 0;
     background-color: snow;
     border: 5px solid black;
     display: block;
@@ -171,6 +171,11 @@ article {
     align-items: center;
     padding: 30px;
     border:rgba(8, 83, 156, 0.75);
+}
+
+.profile-info a {
+    margin: 10px auto;
+    max-width: 35%;
 }
 
 .title {
