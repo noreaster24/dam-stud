@@ -1,5 +1,4 @@
-const { User } = require('../../models');
-
+const { User, Profile, Post, Comment } = require('../../models');
 const router = require('express').Router();
 
 /// this is going to be where the Main user can have the abilities
@@ -19,28 +18,21 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+    // expects {username: 'josephporrazzo', email: 'josephporrazzo@gmail.com', password: 'password1234'}
     User.create({
         username: req.body.username,
         email: req.body.email,
         password: req.body.password
     })
-        .then(dbUserData => {
-            req.session.save(() => {
-                req.session.user_id = dbUserData.id;
-                req.session.username = dbUserData.username;
-                req.session.loggedIn = true;
-
-                res.json(dbUserData);
-            });
-        })
+        .then(dbUserData => res.json(dbUserData))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
 });
 
-// LOGIN routes
 router.post('/login', (req, res) => {
+    // expects {email: 'josephporrazzo@gmail.com', password: 'password1234'}
     User.findOne({
         where: {
             email: req.body.email
@@ -58,13 +50,7 @@ router.post('/login', (req, res) => {
             return;
         }
 
-        req.session.save(() => {
-            req.session.user_id = dbUserData.id;
-            req.session.username = dbUserData.username;
-            req.session.loggedIn = true;
-
-            res.json({ user: dbUserData, message: 'You are now logged in!' });
-        });
+        res.json({ user: dbUserData, message: 'You are now logged in!' });
     });
 });
 

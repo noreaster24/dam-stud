@@ -2,9 +2,6 @@ const router = require('express').Router();
 const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-//this is just for the comment section for below each post. 
-///   Still NOT 100% done or know if its right!
-
 // l
 router.get('/', (req, res) => {
     Comment.findAll()
