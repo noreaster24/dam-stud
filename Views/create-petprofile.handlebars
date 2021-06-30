@@ -1,5 +1,7 @@
+{{!-- thos os the index.hbs --}}
+
 {{!-- reference public/addPet.js, and controllers/api/profile-routes.js --}}
-<form class="cpp-form">
+{{!<form class="cpp-form">
     <div class="cpp-table">
         <div>
             <label for="dogname-cpp">Dog's Name: </label>
@@ -11,7 +13,7 @@
         </div>
         <div>
             <label for="sex-cpp"> Sex: </label>
-            <select id="sex-cpp" > 
+            <select id="sex-cpp">
                 <option value="female"> Female </option>
                 <option value="male"> Male </option>
             </select>
@@ -29,4 +31,61 @@
         </div>
     </div>
 </form>
-<script src="/js/addPet.js"></script> 
+<script src="/js/addPet.js"></script> --}}
+
+
+{{!-- this is the index.hbs --}}
+
+<form action="/" method="POST" enctype="multipart/form-data">
+    <h3>Upload Profile Photo</h3>
+    <input type="file" name="sampleFile" accept="image/*" />
+    <input type="submit" class="btn brn-primary">
+</form>
+<div class="card">
+    {{#each rows}}
+    {{#if this.profile_image}}
+        <img class="card__image" src="{{this.profile_image}}" alt="User Profile">
+    {{else}}
+        <img class="card__image" src="/public/images/Doberman-Pinscher.png" alt="User Profile">
+    {{#if}}
+    <h1 class="card__title">{{this.name}}</h1>
+    <div class="card__job">{{this.job_title}}</div>
+    <p class="card__about">
+        {{this.description}}
+    </p>
+    <button type="button" class="btn btn-primary">View Profile</button>
+    {{/each}}
+
+
+
+</div>
+<div class="cpp-table">
+    <div>
+        <label for="dogname-cpp">Dog's Name: </label>
+        <input type="text" id="dogname-cpp" />
+    </div>
+    <div>
+        <label for="breed-cpp"> Breed: </label>
+        <input type="text" id="breed-cpp" />
+    </div>
+    <div>
+        <label for="sex-cpp"> Sex: </label>
+        <select id="sex-cpp">
+            <option value="female"> Female </option>
+            <option value="male"> Male </option>
+        </select>
+    </div>
+    <div>
+        <label for="age-cpp"> Age: </label>
+        <input type="text" id="age-cpp" />
+    </div>
+    <div>
+        <label for="pet_bio-cpp"> Pet Bio: </label>
+        <input type="text" id="pet_bio-cpp" />
+    </div>
+    <div>
+        <button type="submit"> Create Pet Profile </button>
+    </div>
+</div>
+
+<script src="/js/addPet.js"></script>
