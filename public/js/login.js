@@ -29,16 +29,19 @@ async function signupFormHandler(event) {
 // documentation used:  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
 
 
-async function loginFormHandler(event) {
+
+async function signupFormHandler(event) {
     event.preventDefault();
 
-    const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
+    const username = document.querySelector('#username-signup').value.trim();
+    const email = document.querySelector('#email-signup').value.trim();
+    const password = document.querySelector('#password-signup').value.trim();
 
-    if (email && password) {
-        const response = await fetch('/api/users/login', {
+    if (username && email && password) {
+        const response = await fetch('/api/users', {
             method: 'post',
             body: JSON.stringify({
+                username,
                 email,
                 password
             }),
@@ -48,11 +51,11 @@ async function loginFormHandler(event) {
         if (response.ok) {
             document.location.replace('/');
         } else {
-            console.log(response)
             alert(response.statusText);
         }
     }
 }
+
 
 
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
