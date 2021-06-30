@@ -22,7 +22,8 @@ router.post('/pet/comment/:id', (req, res) => {
         // id = specfic pet your commenting on
         Comment.create({
             comment_text: req.body.comment_text,
-            post_id: req.session.user_id,
+            pet_id: req.params.id,
+            ///double check model/Comment
             user_id: req.session.user_id,
         })
             .then(dbCommentData => res.json(dbCommentData))
@@ -33,7 +34,7 @@ router.post('/pet/comment/:id', (req, res) => {
     }
 });
 
-router.post('/', (req, res) => {
+router.post('/api/comment', (req, res) => {
     // if (req.session) {
         //in order to access id, you need to req.params.id
         // id = specfic pet your commenting on

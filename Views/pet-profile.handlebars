@@ -5,15 +5,11 @@
             </div>
             {{!-- pet profile information based on the user from the database --}}
             <div class="info">
-                <p>
-                    logged in {{loggedIn}}
-                </p>
-                <h1 class="title">{{dogname-cpp}}</h1>
-                <p>Breed: {{breed-cpp}}</p>
-                <p>Sex: {{sex-cpp}}</p>
-                <p>Age: {{age-cpp}}</p>
-
-                <p>Bio: {{pet_bio-cpp}}</h3>
+                <h1 class="title">{{petData.petname}}</h1>
+                <p>Breed: {{petData.breed}}</p>
+                <p>Sex: {{petData.sex}}</p>
+                <p>Age: {{petData.age}}</p>
+                <p>Bio: {{petData.pet_bio}}</h3>
 
                     {{!-- User comment form, only works if logged in --}}
                 {{!-- {{#if loggedIn}} --}}
@@ -44,4 +40,3 @@
     </div>
 </div>
 <script src="/js/comment.js"></script>
-<script src="/js/addPet.js"></script>
